@@ -1,0 +1,29 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+development:
+  #<<: *default
+  #database: Raffle_development
+  adapter: postgresql
+  database: 'dcklo30h2n86m1'
+  username: 'qpfpekbwiaicld'
+  password: 'ed705f1ebbc116f0cb97ddff9804c93f98c604f8f7845c2b84727cad1a967abf'
+  host: 'ec2-54-163-232-171.compute-1.amazonaws.com'
+  port: '5432'
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: postgresql
+  database: 'dcklo30h2n86m1'
+  username: 'qpfpekbwiaicld'
+  password: 'ed705f1ebbc116f0cb97ddff9804c93f98c604f8f7845c2b84727cad1a967abf'
+  host: 'ec2-54-163-232-171.compute-1.amazonaws.com'
+  port: '5432'
+  pool: 5
+  timeout: 5000
+
+test:
+  <<: *default
+  database: 'dbcii74liqrh2i'
