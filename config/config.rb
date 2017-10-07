@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require 'pony'
 
-class Application < Sinatra::Base
+class RaffleApp < Sinatra::Base
   configure do |config|
     Pony.options = {
       :via => :smtp,
