@@ -10,6 +10,7 @@ gem 'pry'
 gem 'rack-cors'
 gem 'jwt'
 gem 'json'
+gem 'actionmailer'
 
 group :development do
   gem 'sqlite3'
