@@ -8,7 +8,7 @@ class Application < Sinatra::Base
       :via_options => {
         :address => 'smtp.sendgrid.net',
         :port => '587',
-        :domain => 'https://raffle-api-app.herokuapp.com/',
+        :domain => 'heroku.com',
         :user_name => 'app78314436@heroku.com',
         :password => 'ib7k5quw4122',
         :authentication => :plain,
