@@ -2,7 +2,7 @@ require 'sinatra/base'
 require 'pony'
 
 class RaffleApp < Sinatra::Base
-  configure do |config|
+  configure do
     Pony.options = {
       :via => :smtp,
       :via_options => {
@@ -15,12 +15,5 @@ class RaffleApp < Sinatra::Base
         :enable_starttls_auto => true
       }
     }
-
-    config.middleware.insert_before 0, "Rack::Cors" do
-      allow do
-        origins '*'
-        resource '*', :headers => :any, :methods => [:get, :post, :options]
-      end
-    end
   end
 end
