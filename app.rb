@@ -21,14 +21,14 @@ class RaffleApp < Sinatra::Base
 
     personalization = Personalization.new
     personalization.add_to(Email.new(email: params[:email]))
-    personalization.add_substitution(Substitution.new(key: '%name%', value: "#{params[:first_name]} #{params[:last_name]}"))
-    personalization.add_substitution(Substitution.new(key: '%email%', value: "#{params[:email]}"))
+    personalization.add_substitution(Substitution.new(key: '%name%', value: "#{submission.first_name} #{submission.last_name}"))
+    personalization.add_substitution(Substitution.new(key: '%email%', value: "#{submission.email}"))
     mail.add_personalization(personalization)
 
     puts mail.to_json
 
     sg = SendGrid::API.new(api_key: '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', host: 'https://api.sendgrid.com')
-    response = sg.client.mail.('send').post(request_body: mail.to_json)
+    response = sg.client.mail._('send').post(request_body: mail.to_json)
 
     puts response.status_code
     puts response.body
