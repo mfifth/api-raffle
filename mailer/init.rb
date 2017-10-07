@@ -7,7 +7,7 @@ configure do
     :authentication => :plain,
     :user_name => 'app78314436@heroku.com',
     :password => 'ib7k5quw4122',
-    :domain => 'raffle-api-app.herokuapp.com'
+    :domain => 'heroku.com'
   }
   ActionMailer::Base.view_paths = File.join(Sinatra::Application.root, 'views')
   set :root,    File.dirname(__FILE__)
