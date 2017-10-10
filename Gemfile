@@ -11,6 +11,7 @@ gem 'rack-cors'
 gem 'jwt'
 gem 'json'
 gem 'actionmailer'
+gem 'figaro'
 
 group :development do
   gem 'sqlite3'

@@ -3,6 +3,7 @@ require 'sinatra/activerecord'
 require 'sendgrid-ruby'
 require 'jwt'
 require 'json'
+require 'config/application.yml'
 require_relative 'models/init'
 
 class RaffleApp < Sinatra::Base
@@ -27,7 +28,7 @@ class RaffleApp < Sinatra::Base
 
     puts mail.to_json
 
-    sg = SendGrid::API.new(api_key: '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', host: 'https://api.sendgrid.com')
+    sg = SendGrid::API.new(api_key: ENV['sendgrid_api_key'], host: 'https://api.sendgrid.com')
     response = sg.client.mail._('send').post(request_body: mail.to_json)
 
     puts response.status_code
