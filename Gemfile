@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'sinatra', require: 'sinatra/base'
-gem 'activerecord'
+gem 'sinatra-contrib'
 gem 'sinatra-activerecord'
+gem 'activerecord'
 gem 'sendgrid-ruby'
 gem 'rake'
 gem 'pony'
@@ -11,7 +12,7 @@ gem 'rack-cors'
 gem 'jwt'
 gem 'json'
 gem 'actionmailer'
-gem 'figaro'
+gem 'dotenv'
 
 group :development do
   gem 'sqlite3'
