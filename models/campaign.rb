@@ -1,3 +1,3 @@
 class Campaign < ActiveRecord::Base
-  include SendGrid
+  has_many :submissions
 end

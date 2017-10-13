@@ -49,4 +49,9 @@ class RaffleApp < Sinatra::Base
     puts "Campaign #{campaign.campaign_name} was saved successfully."
     return 200
   end
+
+  get '/api/campaigns.json' do
+    content_type :json
+    Campaign.all.to_json
+  end
 end

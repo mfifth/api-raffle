@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171005050427) do
+ActiveRecord::Schema.define(version: 20171013034529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20171005050427) do
     t.string "campaign_name"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.integer "max_entries"
-    t.integer "max_winners"
+    t.integer "max_entries", default: 10
+    t.integer "max_winners", default: 1
     t.boolean "agree_to_terms", default: false
     t.boolean "limit_per_ip", default: false
     t.boolean "limit_per_email", default: false

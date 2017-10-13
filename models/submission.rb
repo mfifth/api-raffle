@@ -1,4 +1,5 @@
 class Submission < ActiveRecord::Base
+  belongs_to :campaign
   include SendGrid
 
   def send_winner_emails
